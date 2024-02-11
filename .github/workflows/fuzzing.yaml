@@ -4,7 +4,7 @@ on: [push, pull_request]
 permissions: read-all
 jobs:
   fuzzing:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-staging
     strategy:
       fail-fast: false
     env:
@@ -18,7 +18,6 @@ jobs:
           go-version: ${{ steps.goversion.outputs.goversion }}
       - run: |
           set -euo pipefail
-
           GOARCH=amd64 CPU=4 make fuzz
       - uses: actions/upload-artifact@26f96dfa697d77e81fd5907df203aa23a56210a8 # v4.3.0
         if: failure()
