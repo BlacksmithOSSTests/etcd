@@ -1,3 +1,4 @@
+---
 name: Robustness Nightly
 permissions: read-all
 on:
@@ -11,30 +12,10 @@ jobs:
     # GHA has a maximum amount of 6h execution time, we try to get done within 3h
     uses: ./.github/workflows/robustness-template.yaml
     with:
-      etcdBranch: main
+      etcdBranch: bs-wflw
       count: 150
       testTimeout: 200m
       artifactName: main
-      runs-on: "['blacksmith-8vcpu-ubuntu-2204']"
-      scenario: TestRobustnessExploratory
-      lazyfsEnabled: true
-  release-35:
-    uses: ./.github/workflows/robustness-template.yaml
-    with:
-      etcdBranch: release-3.5
-      count: 150
-      testTimeout: 200m
-      artifactName: release-35
-      runs-on: "['blacksmith-8vcpu-ubuntu-2204']"
-      scenario: TestRobustnessExploratory
-      lazyfsEnabled: true
-  release-34:
-    uses: ./.github/workflows/robustness-template.yaml
-    with:
-      etcdBranch: release-3.4
-      count: 150
-      testTimeout: 200m
-      artifactName: release-34
       runs-on: "['blacksmith-8vcpu-ubuntu-2204']"
       scenario: TestRobustnessExploratory
       lazyfsEnabled: true
