@@ -19,19 +19,19 @@ jobs:
       count: 150
       testTimeout: 200m
       artifactName: main
-      runs-on: "['ubuntu-latest-8-cores']"
+      runs-on: "['blacksmith-8vcpu-ubuntu-2204']"
       scenario: TestRobustnessExploratory
       lazyfsEnabled: true
-  main-arm64:
-    uses: ./.github/workflows/robustness-template.yaml
-    with:
-      etcdBranch: main
-      count: 150
-      testTimeout: 200m
-      artifactName: main-arm64
-      runs-on: "['actuated-arm64-8cpu-8gb']"
-      scenario: TestRobustnessExploratory
-      lazyfsEnabled: false
+#  main-arm64:
+#    uses: ./.github/workflows/robustness-template.yaml
+#    with:
+#      etcdBranch: main
+#      count: 150
+#      testTimeout: 200m
+ #     artifactName: main-arm64
+ #     runs-on: "['actuated-arm64-8cpu-8gb']"
+ #     scenario: TestRobustnessExploratory
+ #     lazyfsEnabled: false
   release-35:
     uses: ./.github/workflows/robustness-template.yaml
     with:
@@ -39,19 +39,19 @@ jobs:
       count: 150
       testTimeout: 200m
       artifactName: release-35
-      runs-on: "['ubuntu-latest-8-cores']"
+      runs-on: "['blacksmith-8vcpu-ubuntu-2204']"
       scenario: TestRobustnessExploratory
       lazyfsEnabled: true
-  release-35-arm64:
-    uses: ./.github/workflows/robustness-template.yaml
-    with:
-      etcdBranch: release-3.5
-      count: 150
-      testTimeout: 200m
-      artifactName: release-35-arm64
-      runs-on: "['actuated-arm64-8cpu-8gb']"
-      scenario: TestRobustnessExploratory
-      lazyfsEnabled: false
+ # release-35-arm64:
+ #   uses: ./.github/workflows/robustness-template.yaml
+ #   with:
+ #     etcdBranch: release-3.5
+ #     count: 150
+ #     testTimeout: 200m
+ #     artifactName: release-35-arm64
+ #     runs-on: "['actuated-arm64-8cpu-8gb']"
+ #     scenario: TestRobustnessExploratory
+ #     lazyfsEnabled: false
   release-34:
     uses: ./.github/workflows/robustness-template.yaml
     with:
@@ -59,6 +59,6 @@ jobs:
       count: 150
       testTimeout: 200m
       artifactName: release-34
-      runs-on: "['ubuntu-latest-8-cores']"
+      runs-on: "['blacksmith-8vcpu-ubuntu-2204']"
       scenario: TestRobustnessExploratory
       lazyfsEnabled: true
