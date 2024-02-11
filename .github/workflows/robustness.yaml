@@ -1,0 +1,15 @@
+---
+name: Robustness
+on: [push, pull_request]
+permissions: read-all
+jobs:
+  main:
+    uses: ./.github/workflows/robustness-template.yaml
+    with:
+      etcdBranch: main
+      count: 12
+      testTimeout: 30m
+      artifactName: main
+      runs-on: "['blacksmith-8vcpu-ubuntu-2204']"
+      scenario: TestRobustness
+      lazyfsEnabled: true
